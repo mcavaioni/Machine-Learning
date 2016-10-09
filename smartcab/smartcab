@@ -1,0 +1,45 @@
+lass LearningAgent(Agent):
+    """An agent that learns to drive in the smartcab world."""
+
+    def __init__(self, env):
+        super(LearningAgent, self).__init__(env)  # sets self.env = env, state = None, next_waypoint = None, and a default color
+        self.color = 'red'  # override color
+        self.planner = RoutePlanner(self.env, self)  # simple route planner to get next_waypoint
+        # TODO: Initialize any additional variables here
+
+    def reset(self, destination=None):
+        self.planner.route_to(destination)
+        # TODO: Prepare for a new trip; reset any variables here, if required
+
+    def update(self, t):
+        # Gather inputs
+        self.next_waypoint = self.planner.next_waypoint()  # from route planner, also displayed by simulator
+        inputs = self.env.sense(self)
+        deadline = self.env.get_deadline(self)
+
+        # TODO: Update state
+        self.state = (self.next_waypoint, inputs['light'], inputs['oncoming'], inputs['left'])
+        
+        # TODO: Select action according to your policy
+        action = random.choice([None, 'forward', 'left', 'right'])
+
+        # Execute action and get reward
+        reward = self.env.act(self, action)
+        
+        # TODO: Learn policy based on state, action, reward
+
+        actions = [None, 'forward', 'left', 'right']
+        
+        Q_dict={}
+        from collections import defaultdict
+        Q_dict= defaultdict(lambda:0, Q_dict)
+        max_reward = -float("inf")
+        max_action = None
+        for a in actions:
+            Q_dict[(self,a)] = self.env.act(self, a)
+            reward = Q_dict[(self, a)]
+            if reward > max_reward:
+                max_reward = reward
+                max_action = a
+        Q_dict[(self.state,action)] = Q_dict[(self.state,action)] + 0.8*(reward + 0.8*Q_dict[(self, max_action)] - Q_dict[(self.state,action)])
+        
