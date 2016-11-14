@@ -1,20 +1,26 @@
-MNIST dataset analysis:
-1. SVM:
- - "mnist_lst.py" downloads the images 
- - "vect_data.py" imports the images from the previous file in order to plot a sample
- - "svm.py" runs the SVM classifier
- 
-2. MLP:
- - "classifier.py" runs the MLP classifier
- 
- 
-SVHN dataset analysis:
-1. MLP:
- - "load_real_images.py" download the images
- - "real_classifier.py" runs the MLP classifier
+This paper applies and analyses different state-of-the-art algorithms for image recognition, using the MNIST and SVHN 
+(Google Street View House Numbers) dataset.
 
-2.CONVOLUTIONS (KERNELS):
- - "convolution.py" applies different kernels to the images 
- 
-3.CONVOLUTIONAL NEURAL NETWORK: (this runs with Keras)
- - "cnnk.py" creates the model for teh netwrok and runs predictions
+-----------
+
+ALGORITHMS AND FILES DESCRIPTION:
+   MNIST dataset analysis:
+   1. SVM:
+    - "mnist_lst.py" downloads the images 
+    - "vect_data.py" imports the images from the previous file in order to plot a sample
+    - "svm.py" runs the SVM classifier
+
+   2. MLP:
+    - "classifier.py" runs the MLP classifier
+
+
+   SVHN dataset analysis:
+   1. MLP:
+    - "load_real_images.py" download the images
+    - "real_classifier.py" runs the MLP classifier
+
+   2.CONVOLUTIONS (KERNELS):
+    - "convolution.py" applies different kernels to the images 
+
+   3.CONVOLUTIONAL NEURAL NETWORK: (this runs with Keras)
+    - "cnnk.py" creates the model for teh netwrok and runs predictions
