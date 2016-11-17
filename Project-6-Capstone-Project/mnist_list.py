@@ -1,3 +1,5 @@
+#This file loads the MNIST dataset.Both the training and test sets.
+
 import os, struct
 import numpy as np
 from array import array as pyarray
