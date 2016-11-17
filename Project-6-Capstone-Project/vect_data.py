@@ -1,3 +1,4 @@
+#From the mnist_list file the images get loaded and put in matrix arrays
 import mnist_list as mnist
 from itertools import islice
     
