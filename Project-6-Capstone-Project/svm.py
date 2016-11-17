@@ -4,11 +4,14 @@ from sklearn import svm
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import f1_score, make_scorer
 
-# clf = svm.SVC()
+
 parameters = {'kernel': ('linear', 'rbf'), 'C': [1,10,100, 1000], 'gamma': [0.001, 0.0001]}
 
 svr = svm.SVC()
 clf = GridSearchCV(svr, parameters)
+
+#If no grid_search is used:
+# clf = svm.SVC()
 
 train_dataset = vect_data.images_train
 nsamples, nx, ny = train_dataset.shape
