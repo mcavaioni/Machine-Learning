@@ -37,7 +37,8 @@ for i in range(0,73257):
     [0, 0, 0],
     [1, 2, 1]), dtype="int")
 
-  # construct the kernel bank
+  # construct the kernel bank. In this case I select the Laplacian filter.
+  # Substitute "laplacian" with any other filter in order to see the results with that:
   kernelBank = laplacian
 
   from skimage.color import rgb2gray
@@ -80,7 +81,8 @@ for i in range(0,26032):
     [0, 0, 0],
     [1, 2, 1]), dtype="int")
 
-  # construct the kernel bank:
+  # construct the kernel bank. In this case I select the Laplacian filter.
+  # Substitute "laplacian" with any other filter in order to see the results with that:
   kernelBank = laplacian
 
   from skimage.color import rgb2gray

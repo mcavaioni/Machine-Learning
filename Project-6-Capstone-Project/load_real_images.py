@@ -1,9 +1,5 @@
+#File used to load SVHN's training and test set:
 
-# import numpy as np, h5py 
-# f = h5py.File('./capstone/test_32x32.mat','r') 
-# data = f.get('data/variable1') 
-# data = np.array(data) # For converting to numpy array
-# print data
 import numpy as np
 import scipy.io as sio
 import matplotlib.pyplot as plt
