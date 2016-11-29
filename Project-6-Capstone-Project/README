@@ -22,5 +22,5 @@ ALGORITHMS AND FILES DESCRIPTION:
    2.CONVOLUTIONS (KERNELS):
     - "convolution.py" applies different kernels to the images 
 
-   3.CONVOLUTIONAL NEURAL NETWORK: (this runs with Keras)
-    - "cnnk.py" creates the model for teh netwrok and runs predictions
+   3.CONVOLUTIONAL NEURAL NETWORK: (this runs with TensorFlow)
+    - "convolut_sv2.py" creates the model for the Convolutional Neural Network and runs predictions
