@@ -23,4 +23,5 @@ ALGORITHMS AND FILES DESCRIPTION:
     - "convolution.py" applies different kernels to the images 
 
    3.CONVOLUTIONAL NEURAL NETWORK: (this runs with TensorFlow)
-    - "convolut_sv2.py" creates the model for the Convolutional Neural Network and runs predictions
+    - "convolut_sv2.py" creates the model for the Convolutional Neural Network and runs 
+      predictions
