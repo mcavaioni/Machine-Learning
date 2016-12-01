@@ -1,6 +1,7 @@
 This paper applies and analyses different state-of-the-art algorithms for image recognition, using the MNIST and SVHN 
 (Google Street View House Numbers) dataset.
 
+Algorithms used are: SVM, MLP, Deep Learning CNN
 -----------
 
 ALGORITHMS AND FILES DESCRIPTION:
