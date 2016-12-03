@@ -1,0 +1,20 @@
+QUESTION1:
+
+S= longest string and T=shortest string.
+These are the steps I am thinking of taking:
+- transform each letter into ASCII format.
+- calculate the length of the shortest string T
+- “slide” a window with the length of T on top of S and see if the sum of the letters contained in that window is equal to the sum of T. (since an anagram of the letters contained in that window brings to the same sum value as the string T)
+
+The number of iterations will be equal to: (length(S)-length(T) +1)
+So I consider the algorithm's complexity of being approximately comparable to O(length(S))
+
+##############
+
+QUESTION2:
+
+The first algorithm that comes in my mind acts as the following:
+- divide in 2 cases: odd palindrome and even palindrome and for each:
+- go through the whole string fixing the centre and expanding in both directions
+
+This algorithm runs in O(n^2) and it also occupies more space as we are using a second array to store the reverse string.
