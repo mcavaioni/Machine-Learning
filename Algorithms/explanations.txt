@@ -24,20 +24,12 @@ This algorithm runs in O(n^2) and it also occupies more space as we are using a 
 QUESTION3: 
 
 A solution to this problem is given by the Dijkstra's algorithm, which is a greedy algorithm.
-The efficiency is O(|V|^2) (where V is the number of vertices or nodes).
 The steps are the following:
 - from a graph I extrapolate the keys which are the "FROM" nodes
 - I loop through each node and looping through each tuple I find the "TO" node that has the lowest edge value
 - I construct a new graph that contains the list of "FROM" nodes pointing to a "TO" node with lowest edge value as calculated before.
 
-
- Kruskal's algorithm:
-    sort the edges of G in increasing order by length
-    keep a subgraph S of G, initially empty
-    for each edge e in sorted order
-        if the endpoints of e are disconnected in S
-        add e to S
-    return S
+The efficiency is O(|V|^2) (where V is the number of vertices or nodes).
 
 ###################
 
@@ -52,4 +44,12 @@ If the node is smaller than the min_val I will, instead, search through the righ
 
 The time complexity with this solution is O(h), where h is the height of the tree. This solution does not require extra space.
 
+##################
+
+QUESTION5:
+
+Since we don't know the length of the linked list we can take advantage of the "pointers".
+We set the head as the "ll" (the first node) and we we iterate as the number of "m" (the nth value from the end), until we reach null as the "next" point, whcih means we reached the end of the list.
+
+This algorithm runs in linear time O(m).
 
