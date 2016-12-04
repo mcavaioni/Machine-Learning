@@ -18,3 +18,38 @@ The first algorithm that comes in my mind acts as the following:
 - go through the whole string fixing the centre and expanding in both directions
 
 This algorithm runs in O(n^2) and it also occupies more space as we are using a second array to store the reverse string.
+
+###############
+
+QUESTION3: 
+
+A solution to this problem is given by the Dijkstra's algorithm, which is a greedy algorithm.
+The efficiency is O(|V|^2) (where V is the number of vertices or nodes).
+The steps are the following:
+- from a graph I extrapolate the keys which are the "FROM" nodes
+- I loop through each node and looping through each tuple I find the "TO" node that has the lowest edge value
+- I construct a new graph that contains the list of "FROM" nodes pointing to a "TO" node with lowest edge value as calculated before.
+
+
+ Kruskal's algorithm:
+    sort the edges of G in increasing order by length
+    keep a subgraph S of G, initially empty
+    for each edge e in sorted order
+        if the endpoints of e are disconnected in S
+        add e to S
+    return S
+
+###################
+
+QUESTION4:
+
+Knowing that the tree is a BST, makes it simpler as we can obey to the properties of BST (left nodes are smaller, right nodes bigger).
+The solution consists of recursively traversing the tree. 
+First I "get rid" of the odd cases where root, n1,n2 are null and the case where n1=n2, which are intuitive.
+The node that lies in between n1 and n2 will be the value we are looking for.
+If instead the node is greater than the max_val between n1 and n2, then I will look at the left hand side of the tree. 
+If the node is smaller than the min_val I will, instead, search through the right hand side of the tree.
+
+The time complexity with this solution is O(h), where h is the height of the tree. This solution does not require extra space.
+
+
