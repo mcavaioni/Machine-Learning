@@ -33,42 +33,167 @@
 # #False
 
 ######################################
-#QUESTION2:
-from itertools import groupby
-from operator import itemgetter
-def question2(a):
+# #QUESTION2:
+# from itertools import groupby
+# from operator import itemgetter
+# def question2(a):
 
-  start = 0
-  length = len(a)
+#   start = 0
+#   length = len(a)
 
-  low=0
-  high=0
-  max_l=1
-  for i in range(1, length):
-    low = i - 1
-    high = i
-    while low >= 0 and high < length and a[low] == a[high]:
-        if high - low + 1 > max_l:
-            start = low
-            max_l = high - low + 1
-        low -= 1
-        high += 1
+#   low=0
+#   high=0
+#   max_l=1
+#   for i in range(1, length):
+#     low = i - 1
+#     high = i
+#     while low >= 0 and high < length and a[low] == a[high]:
+#         if high - low + 1 > max_l:
+#             start = low
+#             max_l = high - low + 1
+#         low -= 1
+#         high += 1
 
-    low = i-1
-    high = i+1
-    while low>=0 and high < length and a[low]==a[high]:
-      if high-low +1 >max_l:
-        start = low
-        max_l= high-low+1
-      low-=1
-      high+=1
-  return a[start:(start+max_l)]    
+#     low = i-1
+#     high = i+1
+#     while low>=0 and high < length and a[low]==a[high]:
+#       if high-low +1 >max_l:
+#         start = low
+#         max_l= high-low+1
+#       low-=1
+#       high+=1
+#   return a[start:(start+max_l)]    
 
-print question2('aaabba')  
-#abba
+# print question2('aaabba')  
+# #abba
 
-print question2('ABCDEFCBA')
-#A
+# print question2('ABCDEFCBA')
+# #A
 
-print question2('ab123321')
-               
+# print question2('ab123321')
+# #123321
+
+##################################
+# #QUESTION3:
+
+# # class Graph(object):
+#   # def __init__(self, nodes=None, edges=None):
+#   #       self.nodes = nodes or []
+#   #       self.edges = edges or []
+#   #       self.node_names = []
+#   #       self._node_map = {}
+# def find_min(input_val):
+#   min_value = min(input_val)
+#   # index_val = input_val[min_value]
+#   return input_val.index(min_value)
+
+# def valid(self):
+#   self= False
+
+# def findSomething(self):
+#   #list of all_nodes (i.e. ['A','B','C'])
+#   all_nodes = self.keys()
+
+#   #tuples per node:
+#   new_g = {}
+#   for el in all_nodes:
+    
+#     tuples =  self[el]
+#     nodes =[]
+#     edges=[]
+#     for i in range(0, len(tuples)):
+#       nodes.append(tuples[i][0])
+#       edges.append(tuples[i][1])
+
+#     min_node = nodes[find_min(edges)]
+    
+#     new_g[el] = [(min_node, edges[find_min(edges)])]
+
+#   return new_g
+
+
+# # G=({'A': [('B', 2)],
+# #  'B': [('A', 2), ('C', 5)], 
+# #  'C': [('B', 5)]})
+
+
+# findSomething(G)
+
+# S = ({'A': [('C', 3), ('B', 7)],
+#       'B': [('A', 7), ('D', 1)],
+#       'D': [('B', 1), ('C', 7)],
+#       'C': [('A', 3), ('D', 7)]})
+
+# print findSomething(S)
+
+########################
+
+# QUESTION4:
+
+def question4(T, root, n1, n2):
+  #odd cases:
+  if n1 == n2:
+    return n1
+  if (root == None) or (n1==None) or (n2==None):
+    return None
+
+  min_val = min(n1, n2)
+  max_val = max(n1, n2)
+
+
+  value = root
+
+  while (value != None):
+    if (value >= min_val) and (value <= max_val):
+      return value 
+    elif value > max_val:
+      sub_list = T[value][:value+1]
+      value = [i for i,x in enumerate(sub_list) if x == 1][0]    
+    elif value < min_val:
+      sub_list = T[value][value:]
+      value = [i for i,x in enumerate(sub_list) if x == 1][0]
+
+
+
+#test cases:
+
+T =[[0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0]]
+
+'''
+     3
+    / \
+   0   4 
+    \
+     1 
+
+'''
+print question4(T,3,1,4)
+#3
+
+print question4(T,None, 1,2)
+#None
+
+print question4(T,3, 1,1)
+#1
+
+
+T1 = [[0, 0, 1],
+      [0, 0, 0],
+      [0, 0, 0]]
+
+'''
+   0
+    \
+     2
+
+'''
+
+print question4(T1,0,2,0)
+#0
+
+
+###############################
