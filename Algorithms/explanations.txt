@@ -6,8 +6,8 @@ These are the steps I am thinking of taking:
 - calculate the length of the shortest string T
 - “slide” a window with the length of T on top of S and see if the sum of the letters contained in that window is equal to the sum of T. (since an anagram of the letters contained in that window brings to the same sum value as the string T)
 
-The number of iterations will be equal to: (length(S)-length(T) +1)
-So I consider the algorithm's complexity of being approximately comparable to O(length(S))
+There's going to be a loop for length(s) and an internal one of length(t).
+Therefore the algorithm's complexity is comparable to O(length(S)*length(t))
 
 ##############
 
@@ -42,7 +42,10 @@ The node that lies in between n1 and n2 will be the value we are looking for.
 If instead the node is greater than the max_val between n1 and n2, then I will look at the left hand side of the tree. 
 If the node is smaller than the min_val I will, instead, search through the right hand side of the tree.
 
-The time complexity with this solution is O(h), where h is the height of the tree. This solution does not require extra space.
+This solution does not require extra space.
+The time complexity with this solution is O(h), (where h is the height of the tree), which is O(log n) if tree is balanced.
+While the worst case would be a run time of O(n) for an unbalanced tree.
+
 
 ##################
 
